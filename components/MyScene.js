@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { StyleSheet, PropTypes, Text, ScrollView } from "react-native";
 import ScrollableTabView, { DefaultTabBar, ScrollableTabBar, } from "react-native-scrollable-tab-view";
 
+
 class MyScene extends Component {
   render() {
     return (
       <ScrollableTabView
         style={styles.container}
         renderTabBar={() => <ScrollableTabBar />}
+        tabBarActiveTextColor='#032250'
+        tabBarInactiveTextColor='#B5BD89'
+        tabBarUnderlineColor='#FFCCBC'
       >
         <ScrollView tabLabel="Tab #1">
           <Text style={styles.errorTextStyle}>

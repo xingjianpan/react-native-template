@@ -6,6 +6,7 @@ import MyScene from './components/MyScene';
 import TabIcon from './components/TabIcon';
 import MyAnotherScene from './components/MyAnotherScene';
 import NavigationDrawer from './components/NavigationDrawer';
+import Talk from './components/Talk';
 
 const RouterComponent = () => {
   return (
@@ -76,7 +77,7 @@ const RouterComponent = () => {
                 navigationBarStyle={{ backgroundColor: APP_STYLES.primaryColor }}
                 titleStyle={{ color: 'white' }}
               >
-                <Scene key="settingsScene" component={MyAnotherScene} title="Settings"/>
+                <Scene key="settingsScene" component={Talk} title="Settings"/>
                 <Scene key="term" component={MyAnotherScene} hideTabBar hideNavBar />
                 <Scene key="profile" component={MyAnotherScene} hideTabBar hideNavBar />
                 <Scene key="about" component={MyAnotherScene} hideNavBar />
