@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet,StatusBar } from 'react-native';
 import { Scene, Reducer, Router, Switch, TabBar, Modal, Schema, Actions } from 'react-native-router-flux';
 import {APP_STYLES} from './utils/AppStyles';
 import MyScene from './components/MyScene';
@@ -8,7 +9,7 @@ import NavigationDrawer from './components/NavigationDrawer';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
+    <Router sceneStyle={styles.container}>
       <Scene key="modal" component={Modal}>
         <Scene key="root" hideNavBar >
           <Scene key="tabbar" component={NavigationDrawer} >
@@ -59,5 +60,14 @@ const RouterComponent = () => {
     </Router>
   );
 };
+
+
+const styles=  StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:"transparent"
+  },
+});
+
 
 export default RouterComponent;
