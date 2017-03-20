@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { Actions } from 'react-native-router-flux';
-import ReduxThunk from 'redux-thunk';
-import ReduxPromise from 'redux-promise';
-import reducers from './reducers';
 import Router from './Router';
+import configureStore from './stores/configureStore';
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, ReduxPromise));
+const store = configureStore();
 
 class App extends Component {
   render() {
