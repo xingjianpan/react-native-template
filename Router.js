@@ -15,8 +15,8 @@ const RouterComponent = () => {
           <Scene key="tabbar" component={NavigationDrawer} >
             <Scene
               key="home" tabs={true} default="Scene2"
-              tabBarStyle={{ backgroundColor: APP_STYLES.primaryColor, height:40}}
-              tabBarSelectedItemStyle={{backgroundColor: APP_STYLES.primaryColor, height:40}}
+              tabBarStyle={{ backgroundColor: APP_STYLES.primaryColor, height: 40}}
+              tabBarSelectedItemStyle={{backgroundColor: APP_STYLES.primaryColor, height: 40}}
               navigationBarStyle={{ backgroundColor: APP_STYLES.primaryColor }}
             >
               <Scene key="main"
@@ -62,10 +62,10 @@ const RouterComponent = () => {
 };
 
 
-const styles=  StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex:1,
-    backgroundColor:"transparent"
+    flex: 1,
+    backgroundColor: 'transparent',
   },
 });
 

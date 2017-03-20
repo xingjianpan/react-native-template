@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
 import { Provider } from 'react-redux';
 import Router from './Router';
 import configureStore from './stores/configureStore';
 
-const store = configureStore();
 console.disableYellowBox = true;
+
+const store = configureStore();
+
 class App extends Component {
   render() {
     return (
@@ -15,7 +16,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;
