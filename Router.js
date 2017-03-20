@@ -14,7 +14,7 @@ const RouterComponent = () => {
         <Scene key="root" hideNavBar >
           <Scene key="tabbar" component={NavigationDrawer} >
             <Scene
-              key="home" tabs default="s2"
+              key="home" tabs default="main"
               tabBarStyle={{ backgroundColor: APP_STYLES.primaryColor, height: 40 }}
               tabBarSelectedItemStyle={{ backgroundColor: APP_STYLES.primaryColor, height: 40 }}
               navigationBarStyle={{ backgroundColor: APP_STYLES.primaryColor }}

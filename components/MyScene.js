@@ -5,7 +5,20 @@ class MyScene extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.errorTextStyle}> Hello world from MyScene</Text>
+        <Text style={styles.errorTextStyle}>
+        New MiFIDII.com
+        We are delighted to inform you that we have re-vamped our www.MiFIDII.com  website in order to:
+
+        - Pivot to solutions and services
+        - Host of a new ‘Non EU’ section (we will add to its contents)
+        - Elevate its lead generating capabilities (more contact us forms etc)
+        - Improved showcasing our social media content
+        - Improved its internal search engine meta tagging and framework
+
+        We hope that you will find it to be easier to use, navigate and ENCOURAGE you to share awareness of its existence with your colleagues, contacts and social media networks – aka help us spread the word to find out more visit: www.MiFIDII.com
+
+
+        </Text>
       </View>
     );
   }
@@ -14,9 +27,9 @@ class MyScene extends Component {
 
 const styles = {
   errorTextStyle: {
-    fontSize: 20,
+    fontSize: 15,
     alignSelf: 'center',
-    color: 'red',
+    color: 'black',
   },
 };
 
