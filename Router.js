@@ -46,12 +46,22 @@ const RouterComponent = () => {
                      titleStyle={{ color:'white' }}
               />
 
-              <Scene key="appointments" component={MyScene}  icon={TabIcon} title="My Appointments"
+              <Scene key="appointments" component={MyAnotherScene}  icon={TabIcon} title="My Appointments"
                      selectedTabIcon="ios-alarm" tabIcon="ios-alarm-outline"
                      navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                      titleStyle={{ color:'white' }}
 
               />
+              <Scene  key="settings" icon={TabIcon}  title="Settings"
+                    selectedTabIcon="ios-settings" tabIcon="ios-settings-outline"
+                    navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                    titleStyle={{ color:'white' }}
+              >
+                <Scene key="settingsScene" component={MyAnotherScene} title="Settings"/>
+                <Scene key="term" component={MyAnotherScene}  hideTabBar={true} hideNavBar={true} />
+                <Scene key="profile" component={MyAnotherScene}  hideTabBar={true} hideNavBar={true} />
+                <Scene key="about" component={MyAnotherScene} hideNavBar={true} />
+              </Scene>
             </Scene>
             <Scene key="s2" component={MyAnotherScene} title="Scene2" />
           </Scene>
