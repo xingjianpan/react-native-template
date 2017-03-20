@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import ScrollableTabView, { DefaultTabBar, ScrollableTabBar, } from "react-native-scrollable-tab-view";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class MyAnotherScene extends Component {
   render() {
     return (
-      <View>
-        <Text>
-  Don’t expect to learn how to win arguments
-   by reading law professor Stanley Fish’s treatise.
-    His main premise is that arguments pervade every
-    aspect of life, never truly end and, therefore, can’t
-     have a victor – at least, not a permanent victor.
-      If you accept the certainty of argument and
-      embrace it as all encompassing, you have clear
-      motivation to get better at “argumentation,”
-      and this exploration will help. At the least,
-      you might learn to avoid the most fruitless of
-      all arguments – those with your partner or spouse.
-       Fish writes more about the philosophy of argument
-       than practical techniques, but if the way discourse unfolds intrigues you, you’ll enjoy his compelling exploration of why and how people disagree.
-  What you will learn:
-  • Why argument, not agreement, is the natural state of humanity; and
-  • What types of arguments emerge in politics, law, marriage and academia.
-
-
-        </Text>
-      </View>
+      <ScrollableTabView
+      style={styles.container}
+      renderTabBar={()=><DefaultTabBar backgroundColor='rgba(255, 255, 255, 0.7)' />}
+      tabBarPosition='overlayTop'
+    >
+      <ScrollView tabLabel='iOS'>
+        <Icon name='logo-apple' color='black' size={300} style={styles.icon} />
+        <Icon name='ios-phone-portrait' color='black' size={300} style={styles.icon} />
+        <Icon name='logo-apple' color='#DBDDDE' size={300} style={styles.icon} />
+        <Icon name='ios-phone-portrait' color='#DBDDDE' size={300} style={styles.icon} />
+      </ScrollView>
+      <ScrollView tabLabel='Android'>
+        <Icon name='logo-android' color='#A4C639' size={300} style={styles.icon} />
+        <Icon name='logo-android' color='black' size={300} style={styles.icon} />
+        <Icon name='logo-android' color='brown' size={300} style={styles.icon} />
+      </ScrollView>
+    </ScrollableTabView>
     );
   }
 }
 
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    paddingVertical: 20,
+    paddingHorizontal: 5,
+    flex: 1,
+    marginTop: 64,
+  },
+  button: {
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "black",
+    padding: 10,
+  },
+  errorTextStyle: {
+    fontSize: 15,
+    alignSelf: "center",
+    color: "black",
+  },
+});
 export default MyAnotherScene;
