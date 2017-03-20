@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, PropTypes, Text, ScrollView, TouchableOpacity } from 'react-native';
+
+
+
 
 class MyScene extends Component {
+
   render() {
+    const drawer = this.context.drawer;
     return (
-      <View>
+      <ScrollView style={styles.container}>
         <Text style={styles.errorTextStyle}>
         New MiFIDII.com
         We are delighted to inform you that we have re-vamped our www.MiFIDII.com  website in order to:
@@ -19,18 +24,42 @@ class MyScene extends Component {
 
 
         </Text>
-      </View>
+
+        <Text>MAIN</Text>
+        <TouchableOpacity style={styles.button} onPress={drawer.open}>
+          <Text>Open Drawer</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
 
+MyScene.contextTypes = {
+  drawer: React.PropTypes.object,
+};
 
-const styles = {
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    paddingVertical: 20,
+    paddingHorizontal: 5,
+    flex: 1,
+    marginTop: 64,
+  },
+  button: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 10,
+  },
   errorTextStyle: {
     fontSize: 15,
     alignSelf: 'center',
     color: 'black',
   },
-};
+
+})
 
 export default MyScene;

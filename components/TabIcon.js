@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { StyleSheet, Navigator,Text,View,Image} from 'react-native'
+import { StyleSheet, Navigator, Text, View, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class TabIcon extends Component {
