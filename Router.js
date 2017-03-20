@@ -14,13 +14,14 @@ const RouterComponent = () => {
         <Scene key="root" hideNavBar >
           <Scene key="tabbar" component={NavigationDrawer} >
             <Scene
-              key="home" tabs default="main"
+              key="home" tabs default="s2"
               tabBarStyle={{ backgroundColor: APP_STYLES.primaryColor, height: 40 }}
               tabBarSelectedItemStyle={{ backgroundColor: APP_STYLES.primaryColor, height: 40 }}
               navigationBarStyle={{ backgroundColor: APP_STYLES.primaryColor }}
             >
               <Scene
                 key="main"
+                title="Main"
                 icon={TabIcon}
                 selectedTabIcon="ios-home"
                 tabIcon="ios-home-outline"
