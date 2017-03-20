@@ -1,20 +1,60 @@
 import React from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
+import { Scene, Reducer, Router, Switch, TabBar, Modal, Schema, Actions } from 'react-native-router-flux';
+import {APP_STYLES} from './utils/AppStyles';
 import MyScene from './components/MyScene';
+import TabIcon from './components/TabIcon';
+import MyAnotherScene from './components/MyAnotherScene';
+import NavigationDrawer from './components/NavigationDrawer';
 
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-      <Scene key="main">
-        <Scene
-          onRight={() => Actions.s2()}
-          rightTitle="Scene2"
-          key="s1"
-          component={MyScene}
-          title="Scene1"
-          initial
-        />
-        <Scene key="s2" component={MyScene} title="Scene2" />
+      <Scene key="modal" component={Modal}>
+        <Scene key="root" hideNavBar >
+          <Scene key="tabbar" component={NavigationDrawer} >
+            <Scene
+              key="home" tabs={true} default="Scene2"
+              tabBarStyle={{ backgroundColor: APP_STYLES.primaryColor, height:40}}
+              tabBarSelectedItemStyle={{backgroundColor: APP_STYLES.primaryColor, height:40}}
+              navigationBarStyle={{ backgroundColor: APP_STYLES.primaryColor }}
+            >
+              <Scene key="main"
+                      icon={TabIcon}
+                      selectedTabIcon="ios-home"
+                      tabIcon="ios-home-outline"
+                      navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                      titleStyle={{ color:'white' }}
+              >
+                <Scene key="categories" component={MyScene} initial={true} hideNavBar={false} type="reset"/>
+                <Scene key="categoryEntity" component={MyScene} />
+                <Scene key="companyEntity" component={MyScene} />
+                <Scene key="appointmentContainer" component={MyScene} />
+              </Scene>
+
+
+              <Scene key="maps" component={MyScene} icon={TabIcon}
+                     title="Map"
+                     selectedTabIcon="ios-map" tabIcon="ios-map-outline"
+                     navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                     titleStyle={{ color:'white' }}
+              />
+
+              <Scene key="favorites" component={MyScene} icon={TabIcon} title="Favorites"
+                     selectedTabIcon="ios-star" tabIcon="ios-star-outline"
+                     navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                     titleStyle={{ color:'white' }}
+              />
+
+              <Scene key="appointments" component={MyScene}  icon={TabIcon} title="My Appointments"
+                     selectedTabIcon="ios-alarm" tabIcon="ios-alarm-outline"
+                     navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                     titleStyle={{ color:'white' }}
+
+              />
+            </Scene>
+            <Scene key="s2" component={MyAnotherScene} title="Scene2" />
+          </Scene>
+        </Scene>
       </Scene>
     </Router>
   );
